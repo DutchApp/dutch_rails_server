@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+      format.xml { render xml: @users }
     end
   end
 
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
+      format.xml { render xml: @users }
     end
   end
 
@@ -29,6 +31,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
+      format.xml { render xml: @users }
     end
   end
 
@@ -46,9 +49,11 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
+        format.xml { render xml: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.xml { render xml: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,9 +67,11 @@ class UsersController < ApplicationController
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
+        format.xml { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.xml { render xml: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,6 +85,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+      format.xml { head :no_content }
     end
   end
 end
