@@ -1,3 +1,5 @@
+Codeship Status for {DutchApp/dutch_rails_server}[https://www.codeship.io/projects/2372] https://www.codeship.io/projects/26c1d1d0-7fa9-0130-97a9-12313d1a025f/status?branch=master
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
