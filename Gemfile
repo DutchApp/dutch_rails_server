@@ -35,8 +35,8 @@ end
 
 gem 'jquery-rails', '2.0.2'
 
-# To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '3.0.1'
+# Devise Integration
+gem 'devise'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
