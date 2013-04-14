@@ -1,0 +1,9 @@
+Registration:
+POST /users
+{"user":{
+    "name":["Abhinav Trivedi"],
+    "email":"abhi2@dutch.com",
+    "password":"password",
+    "password_confirmation":"password"
+    }
+}

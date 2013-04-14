@@ -1,5 +1,9 @@
 DutchRails::Application.routes.draw do
-  resources :users
+  get "home/index"
+
+  devise_for :users, controllers: {registrations: 'users/registrations'}
+
+  resources :users, only: [:index]
 
   root :to => "home#index"
 
