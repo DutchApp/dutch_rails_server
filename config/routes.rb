@@ -1,7 +1,7 @@
 DutchRails::Application.routes.draw do
   resources :users
 
-
+  match '/users/sign_in' => 'users#login'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

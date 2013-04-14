@@ -37,4 +37,9 @@ describe 'Routes for User' , user: true do
     .to route_to(controller: 'users', action: 'destroy', id: '1')
   end
 
+  it 'should route POST /users/sign_in to users#login' do
+    expect(post: '/users/sign_in')
+    .to route_to(controller: 'users', action: 'login')
+  end
+
 end
