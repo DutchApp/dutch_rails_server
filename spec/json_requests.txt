@@ -17,6 +17,4 @@ POST /users
 
 Sign_Out:
 DELETE /users
-{
-    "auth_token":"ahvuAMZRJM3yZrXJSXYG"
-}
+header: "auth_token":"<auth token>"
