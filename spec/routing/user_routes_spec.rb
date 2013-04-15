@@ -7,39 +7,35 @@ describe 'Routes for User' , user: true do
     .to route_to(controller: 'users', action: 'index')
   end
 
-  it 'should route POST /users to users#create' do
+  it 'should route POST /users to users/registrations#create' do
     expect(post: '/users')
-    .to route_to(controller: 'users', action: 'create')
+    .to route_to(controller: 'users/registrations', action: 'create')
   end
 
-  it 'should route GET /users/new to users#new' do
+  it 'should not route GET /users/new' do
     expect(get: '/users/new')
-    .to route_to(controller: 'users', action: 'new')
+    .not_to be_routable
   end
 
-  it 'should route GET /users/{id} to users#show' do
+  it 'should not route GET /users/{id}' do
     expect(get: '/users/1')
-    .to route_to(controller: 'users', action: 'show', id: '1')
+    .not_to be_routable
+    #.to route_to(controller: 'users', action: 'show', id: '1')
   end
 
-  it 'should route GET /users/{id}/edit to users#edit' do
+  it 'should not route GET /users/{id}/edit' do
     expect(get: '/users/1/edit')
-    .to route_to(controller: 'users', action: 'edit', id: '1')
+    .not_to be_routable
   end
 
-  it 'should route PUT /users/{id} to users#update' do
+  it 'should not route PUT /users/{id}' do
     expect(put: '/users/1')
-    .to route_to(controller: 'users', action: 'update', id: '1')
+    .not_to be_routable
   end
 
-  it 'should route DELETE /users/{id} to users#destroy' do
+  it 'should not route DELETE /users/{id}' do
     expect(delete: '/users/1')
-    .to route_to(controller: 'users', action: 'destroy', id: '1')
-  end
-
-  it 'should route POST /users/sign_in to users#login' do
-    expect(post: '/users/sign_in')
-    .to route_to(controller: 'users', action: 'login')
+    .not_to be_routable
   end
 
 end
