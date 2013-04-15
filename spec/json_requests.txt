@@ -7,6 +7,7 @@ POST /users
     "password_confirmation":"password"
     }
 }
+curl -H "Content-type: application/json" -X POST -d '{"user":{"name":"Abhinav Trivedi","email":"abhi2@dutch.com","password":"password","password_confirmation":"password"}}' 'http://dutch.herokuapp.com/users.json'
 
 Sign_in:
 POST /users
@@ -14,7 +15,9 @@ POST /users
     "email":"abhi2@dutch.com",
     "password":"password"
 }
+curl -H "Content-type: application/json" -X POST -d '{"email":"abhi@dutch.com","password":"password"}' 'http://dutch.herokuapp.com/users/sign_in.json'
 
 Sign_Out:
 DELETE /users
 header: "auth_token":"<auth token>"
+curl -H "Content-type: application/json" -H "auth_token: <auth_token>" -X DELETE 'http://dutch.herokuapp.com/users/sign_out.json'
