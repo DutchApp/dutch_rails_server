@@ -1,34 +1,45 @@
 [ ![Codeship Status for DutchApp/dutch_rails_server](https://www.codeship.io/projects/26c1d1d0-7fa9-0130-97a9-12313d1a025f/status?branch=master)](https://www.codeship.io/projects/2372)
 
-== Welcome to Rails
+== Devise
 
-Rails is a web-application framework that includes everything needed to create
-database-backed web applications according to the Model-View-Control pattern.
+===============================================================================
 
-This pattern splits the view (also called the presentation) into "dumb"
-templates that are primarily responsible for inserting pre-built data in between
-HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
-persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
-and directing data to the view.
+Some setup you must do manually if you haven't yet:
 
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
 
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+       config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+     In production, :host should be set to the actual host of your application.
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root :to => "home#index"
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. If you are deploying Rails 3.1+ on Heroku, you may want to set:
+
+       config.assets.initialize_on_precompile = false
+
+     On config/application.rb forcing your application to not access the DB
+     or load models when precompiling your assets.
+
+  5. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+===============================================================================
 
 
-== Getting Started
+== JSON Requests
 
 1. At the command prompt, create a new Rails application:
        <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)

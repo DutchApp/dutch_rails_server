@@ -1,0 +1,22 @@
+Registration:
+POST /users
+{"user":{
+    "name":["Abhinav Trivedi"],
+    "email":"abhi2@dutch.com",
+    "password":"password",
+    "password_confirmation":"password"
+    }
+}
+
+Sign_in:
+POST /users
+{
+    "email":"abhi2@dutch.com",
+    "password":"password"
+}
+
+Sign_Out:
+DELETE /users
+{
+    "auth_token":"ahvuAMZRJM3yZrXJSXYG"
+}
