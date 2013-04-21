@@ -1,2 +1,17 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+/* header */
+#logo {
+  float: left;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  padding-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
