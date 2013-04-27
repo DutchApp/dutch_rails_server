@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.1.0)
@@ -115,6 +117,8 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    shoulda-matchers (2.0.0)
+      activesupport (>= 3.0.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -137,6 +141,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   bootstrap-sass
   coffee-rails (= 3.2.2)
   devise
@@ -147,5 +152,6 @@ DEPENDENCIES
   rails (= 3.2.13)
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
+  shoulda-matchers
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
