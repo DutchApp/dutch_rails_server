@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,6 +9,7 @@ gem 'rails', '3.2.13'
 group :development do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+  gem 'annotate'
 
   # Debugging gems
   #gem 'ruby-debug19'
@@ -17,6 +19,7 @@ end
 group :test do
   gem 'factory_girl_rails', '4.1.0'
   gem 'faker', '1.0.1'
+  gem 'shoulda-matchers'
 end
 
 
