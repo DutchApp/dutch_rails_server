@@ -16,4 +16,5 @@ class Expense < ActiveRecord::Base
   validates_presence_of :name
   belongs_to :owner, class_name: :user, foreign_key: :owner_id
   validates_numericality_of :amount
+  has_many :splits
 end

@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: splits
+#
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  description :string(255)
+#  amount      :decimal(, )
+#
+
 require 'spec_helper'
 
 describe Split do
