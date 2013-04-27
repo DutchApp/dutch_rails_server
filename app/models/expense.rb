@@ -8,8 +8,12 @@
 #  description :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  owner_id    :integer
 #
 
 class Expense < ActiveRecord::Base
   attr_accessible :amount, :description, :name
+  validates_presence_of :name
+  belongs_to :owner, class_name: :user, foreign_key: :owner_id
+  validates_numericality_of :amount
 end
