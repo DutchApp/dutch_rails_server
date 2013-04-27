@@ -7,6 +7,8 @@ DutchRails::Application.routes.draw do
 
   root :to => "home#index"
 
+  resources :expenses
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
