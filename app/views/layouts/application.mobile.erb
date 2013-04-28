@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DutchRailsMobile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "/jqtouch/themes/css/jqtouch.css", "/jqtouch/themes/css/apple.css" %>
+  <%= javascript_include_tag "/jqtouch/src/lib/zepto.min.js", "/jqtouch/src/jqtouch.min.js", "mobile" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="current">
+      <!--<p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>-->
+      <%= yield %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), class: 'scroll') do |f| %>
+
+  <ul class="edit rounded">
+  	<li>
+  		<%= f.email_field :email, :autofocus => true , placeholder:'email' %>
+  	</li>
+  	<li>
+  		<%= f.password_field :password , placeholder:'password'%>
+  	</li>
+  	<% if devise_mapping.rememberable? -%>
+  		<li>
+		  	<%= f.label :remember_me %>
+		  	<span class="toggle">
+		  		<%= f.check_box :remember_me %> 
+		  	</span>
+	  	</li>	
+	  <% end -%>
+  </ul>
+  <ul class="individual">
+  	<li>
+  		<%= f.submit "Sign in" %>
+  	</li>
+  </ul>
+  
+
+<% end %>
+
+<%= render "devise/shared/links" %>
