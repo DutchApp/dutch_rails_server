@@ -10,6 +10,7 @@ describe User, user: true do
   it {should respond_to :email}
   it {should respond_to :password}
   it {should respond_to :password_confirmation}
+  it {should respond_to :expenses}
 
 
   it {should be_valid}
