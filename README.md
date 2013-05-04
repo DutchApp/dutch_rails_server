@@ -1,6 +1,5 @@
-[ ![Codeship Status for DutchApp/dutch_rails_server](https://www.codeship.io/projects/26c1d1d0-7fa9-0130-97a9-12313d1a025f/status?branch=master)](https://www.codeship.io/projects/2372)
 [![Code Climate](https://codeclimate.com/github/DutchApp/dutch_rails_server.png)](https://codeclimate.com/github/DutchApp/dutch_rails_server)
-== Devise
+[![Dependency Status](https://gemnasium.com/DutchApp/dutch_rails_server.png)](https://gemnasium.com/DutchApp/dutch_rails_server)
 
 ===============================================================================
 
