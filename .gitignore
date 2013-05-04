@@ -16,3 +16,6 @@
 
 # Ignore IDE files
 .idea
+
+# Code Coverage
+coverage
