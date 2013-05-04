@@ -8,7 +8,6 @@ gem 'bootstrap-sass'
 
 group :development do
   gem 'sqlite3', '1.3.5'
-  gem 'rspec-rails', '2.11.0'
   gem 'annotate'
 
   # Debugging gems
@@ -16,11 +15,18 @@ group :development do
   #gem 'ruby-debug-ide'
 end
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end
+
 group :test do
   gem 'factory_girl_rails', '4.1.0'
   gem 'faker', '1.0.1'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 
