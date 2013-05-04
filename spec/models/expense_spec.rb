@@ -8,7 +8,7 @@
 #  description  :string(255)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  owner_id     :integer
+#  user_id      :integer
 #  expense_date :datetime
 #
 
@@ -21,7 +21,7 @@ describe Expense do
 	it {should respond_to :description}
   it {should respond_to :expense_date}
 
-	it {should belong_to :owner}
+	it {should belong_to :user}
 	it {should respond_to :splits}
 
 	it {should validate_presence_of :name}

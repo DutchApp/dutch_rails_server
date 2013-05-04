@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(params['expense'])
+    @expense.user = current_user
     if @expense.save
       render :show
     else

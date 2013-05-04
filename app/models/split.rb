@@ -14,6 +14,6 @@
 class Split < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :expense
-  belongs_to :split_owner , class_name: :user
+  belongs_to :user
   validates_numericality_of :amount
 end
