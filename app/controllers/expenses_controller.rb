@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(params['expense'])
+    @expense.expense_date = Date.strptime(params['expense']['expense_date'], '%m/%d/%Y')
     @expense.user = current_user
     if @expense.save
       render :show
@@ -14,6 +15,7 @@ class ExpensesController < ApplicationController
   end
 
   def index
+     @expenses = current_user.expenses
 
   end
 

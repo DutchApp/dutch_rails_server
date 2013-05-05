@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504203459) do
+ActiveRecord::Schema.define(:version => 20130505031019) do
 
   create_table "expenses", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20130504203459) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "user_id"
-    t.datetime "expense_date"
+    t.date     "expense_date"
   end
 
   create_table "splits", :force => true do |t|
