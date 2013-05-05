@@ -12,4 +12,12 @@ class ExpensesController < ApplicationController
       flash.warning = 'Error'
     end
   end
+
+  def index
+
+  end
+
+  def show
+
+  end
 end

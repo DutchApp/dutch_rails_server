@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe ExpensesController do
 
+  before do
+    @user = FactoryGirl.create :user
+    sign_in @user
+  end
+
   describe "GET 'new'" do
     it "renders 'new' template" do
       get 'new'
@@ -12,9 +17,9 @@ describe ExpensesController do
 
   describe "GET 'index'" do
     it "renders 'index' template" do
-      get 'index'
+      get :index
       response.should be_success
-      response.should render_template :index
+      response.should render_template(:index)
     end
   end
 
