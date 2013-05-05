@@ -6,4 +6,9 @@ describe 'Routes for expenses' do
     expect(get: '/expenses/new')
     .to route_to(controller: 'expenses', action: 'new')
   end
+
+  it 'should route GET /expenses to expenses#index' do
+    expect(get: '/expenses')
+    .to route_to(controller: 'expenses', action: 'index')
+  end
 end

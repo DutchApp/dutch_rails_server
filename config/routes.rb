@@ -1,4 +1,6 @@
 DutchRails::Application.routes.draw do
+  get "expenses/index"
+
   get "home/index"
 
   devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
