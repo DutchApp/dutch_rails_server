@@ -12,11 +12,12 @@
 #  expense_date :datetime
 #
 
-class Expense < ActiveRecord::Base
-  attr_accessible :amount, :description, :name, :expense_date
-  validates_presence_of :name
-  belongs_to :user
-  validates_numericality_of :amount
-  has_many :splits
-
+FactoryGirl.define do
+  factory :expense do
+    name Faker::Lorem.sentence
+    amount 100
+    description Faker::Lorem.sentence
+    expense_date Date.current
+    user_id 1
+  end
 end
