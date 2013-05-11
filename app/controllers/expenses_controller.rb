@@ -21,6 +21,6 @@ class ExpensesController < ApplicationController
   end
 
   def show
-
+    @expense = Expense.find(params[:id])
   end
 end

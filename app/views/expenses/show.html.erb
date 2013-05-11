@@ -1,0 +1,7 @@
+<div class="page-header">
+  <h1> <%= @expense.name  %></h1>
+  <small>Created <%= time_ago_in_words @expense.created_at %> ago</small>
+</div>
+Amount: $<%= @expense.amount %>
+<%= link_to '+', '#', class: 'btn btn-primary' %>
+<%= link_to '-', '#', class: 'btn btn-danger' %>

@@ -30,6 +30,6 @@ feature 'Expense Management' do
     @expense = FactoryGirl.create :expense, user_id: @user.id
     visit "/expenses/#{@expense.id}"
 
-    expect(page).to have_content @expense.name
+    expect(page).to have_selector 'h1', text: @expense.name
   end
 end
