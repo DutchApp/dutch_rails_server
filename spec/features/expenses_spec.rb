@@ -25,4 +25,11 @@ feature 'Expense Management' do
       expect(page).to have_content expense.name
     end
   end
+
+  scenario 'Expense owner views an expense' do
+    @expense = FactoryGirl.create :expense, user_id: @user.id
+    visit "/expenses/#{@expense.id}"
+
+    expect(page).to have_content @expense.name
+  end
 end
