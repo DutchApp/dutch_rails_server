@@ -1,4 +1,5 @@
 <h1>Expense List</h1>
+<%= link_to 'Create Expense', new_expense_path, class: 'btn btn-large btn-primary'  %>
 <% if @expenses.any? %>
 <table class="table table-striped">
   <thead>
