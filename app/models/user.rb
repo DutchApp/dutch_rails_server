@@ -35,4 +35,12 @@ class User < ActiveRecord::Base
 
   has_many :expenses
 
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      @users = User.all
+    end
+  end
+
 end
