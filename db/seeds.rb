@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'factory_girl'
+
+FactoryGirl.create(:user, name: 'Test User', email: 'test@dutch.com')
+#FactoryGirl.create_list(:user, 100)
+100.times do
+  FactoryGirl.create(:user)
+end

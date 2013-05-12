@@ -16,12 +16,12 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails"
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '4.1.0'
+  gem 'faker', '1.0.1'
 end
 
 group :test do
-  gem 'factory_girl_rails', '4.1.0'
-  gem 'faker', '1.0.1'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
   gem 'cucumber-rails', :require => false

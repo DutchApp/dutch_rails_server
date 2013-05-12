@@ -6,8 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 $(function() {
-    $("#contributor_search").submit(function(){
-        $.get(this.action, $(this).serialize(), null, "script");
+    $("#search").keyup(function(){
+        $.get($("#contributor_search").attr("action"), $(this).serialize(), null, "script");
         return false;
     });
 });

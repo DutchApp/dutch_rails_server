@@ -1,17 +1,8 @@
-<div class="page-header">
+<div class="hero-unit">
   <h1> <%= @expense.name  %></h1>
-  <small>Created <%= time_ago_in_words @expense.created_at %> ago</small>
-</div>
-Amount: <%= number_to_currency @expense.amount %>
-<!--<form class="form-search">
-  <input type="text" class="input-medium search-query">
-  <button type="submit" class="btn">Search</button>
-</form>-->
+  <p><%= @expense.description %></p>
 
-<%= form_tag users_path, method: :get, class: 'form-search', id: 'contributor_search' do %>
-    <%= text_field_tag :search, params[:search], class: 'search-query' %>
-    <%= submit_tag "Search", class: 'btn', name: nil %>
-<% end %>
-<div id="contributorSearchResults">
-  <%= render 'users/users' %>
 </div>
+<p>Created <%= distance_of_time_in_words_to_now @expense.created_at %> ago</p>
+<p>Amount: <%= number_to_currency @expense.amount %></p>
+<%= render 'contributors' %>
