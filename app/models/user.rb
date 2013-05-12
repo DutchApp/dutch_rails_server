@@ -35,4 +35,12 @@ class User < ActiveRecord::Base
 
   has_many :expenses
 
+  def self.search(search)
+    if (search && !search.blank?)
+      where('name LIKE ?', "%#{search}%")
+    else
+      []
+    end
+  end
+
 end

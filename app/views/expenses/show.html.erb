@@ -1,0 +1,8 @@
+<div class="hero-unit">
+  <h1> <%= @expense.name  %></h1>
+  <p><%= @expense.description %></p>
+
+</div>
+<p>Created <%= distance_of_time_in_words_to_now @expense.created_at %> ago</p>
+<p>Amount: <%= number_to_currency @expense.amount %></p>
+<%= render 'contributors' %>

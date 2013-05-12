@@ -15,6 +15,12 @@
     <%= f.label :description %>
     <%= f.text_area :description, rows: 3, cols: 50 %>
     <%= f.label :amount %>
-    <%= f.number_field :amount %>
-    <%= f.submit 'Create Expense' %>
+    <div class="input-prepend">
+      <span class="add-on">$</span>
+      <%= f.number_field :amount, class: 'input-mini' %>
+    </div>
+    <div>
+      <%= f.submit 'Create Expense', class: 'btn btn-primary' %>
+    </div>
+
 <% end %>

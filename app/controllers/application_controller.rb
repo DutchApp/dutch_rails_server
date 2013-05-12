@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authenticate_user!
-  before_filter :prepare_for_mobile
+  #before_filter :prepare_for_mobile
 
+=begin
   def mobile_device?
   	puts "mobile_device?: mobile_param: #{session[:mobile_param]}"
   	puts "user agent: #{request.user_agent}"
@@ -19,4 +20,5 @@ class ApplicationController < ActionController::Base
   		session[:mobile_param] = params[:mobile] if params[:mobile]
   		request.format = :mobile if mobile_device?
   	end
+=end
 end

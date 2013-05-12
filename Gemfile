@@ -16,12 +16,12 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails"
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '4.1.0'
+  gem 'faker', '1.0.1'
 end
 
 group :test do
-  gem 'factory_girl_rails', '4.1.0'
-  gem 'faker', '1.0.1'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
   gem 'cucumber-rails', :require => false
@@ -47,7 +47,7 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
-#gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails'
 
 # Devise Integration
 gem 'devise'

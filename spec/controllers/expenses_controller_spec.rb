@@ -23,4 +23,16 @@ describe ExpensesController do
     end
   end
 
+  describe "GET 'show'" do
+    before do
+      @expense = FactoryGirl.create(:expense)
+    end
+    it "renders 'show' template" do
+      get :show, id: @expense
+      response.should be_success
+      response.should render_template(:show)
+      assigns(:expense).should eq(@expense)
+    end
+  end
+
 end

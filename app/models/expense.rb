@@ -9,7 +9,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :integer
-#  expense_date :datetime
+#  expense_date :date
 #
 
 class Expense < ActiveRecord::Base
