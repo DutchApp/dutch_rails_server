@@ -9,7 +9,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :integer
-#  expense_date :datetime
+#  expense_date :date
 #
 
 FactoryGirl.define do
@@ -17,7 +17,8 @@ FactoryGirl.define do
     name Faker::Lorem.sentence
     amount 100
     description Faker::Lorem.sentence
-    expense_date Date.current
+    #expense_date Date.current
+    expense_date '05/11/2013'
     user_id 1
   end
 end

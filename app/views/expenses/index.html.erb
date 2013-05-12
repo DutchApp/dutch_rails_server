@@ -14,7 +14,7 @@
   <% @expenses.each do |expense| %>
   <tr>
     <td><%= time_ago_in_words(expense.created_at) %> ago</td>
-    <td><%= expense.name %></td>
+    <td><%= link_to expense.name, expense_path(expense) %></td>
     <td><%= expense.expense_date.to_formatted_s(:rfc822) %></td>
     <td><%= expense.amount %></td>
   </tr>
