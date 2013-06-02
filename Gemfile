@@ -17,8 +17,9 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'factory_girl_rails', '4.1.0'
-  gem 'faker', '1.0.1'
+  gem 'factory_girl_rails', '4.2.1'
+  gem 'faker', '1.1.2'
+  gem 'populator'
 end
 
 group :test do

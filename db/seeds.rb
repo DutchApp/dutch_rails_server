@@ -6,10 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'factory_girl'
+#require 'factory_girl'
+#require 'populator'
 
-FactoryGirl.create(:user, name: 'Test User', email: 'test@dutch.com')
-#FactoryGirl.create_list(:user, 100)
+# Test user
+User.create! name: 'Test User',
+             email: 'test@dutch.com',
+             password: 'password',
+             password_confirmation: 'password'
+
+# Seeded Users
 100.times do
-  FactoryGirl.create(:user)
+  User.create! name: Faker::Name.name,
+               email: Faker::Internet.email,
+               password: 'password',
+               password_confirmation: 'password'
 end
+#User.populate 100 do |user|
+#  user.name Faker::Name.name
+#  user.email Faker::Internet.email
+#  user.password 'password'
+#  user.password_confirmation 'password'
+#end
