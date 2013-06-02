@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+APP_VERSION = '0.0.1'
+
 require 'rails/all'
 
 if defined?(Bundler)
