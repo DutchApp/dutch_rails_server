@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602224959) do
+ActiveRecord::Schema.define(:version => 20130603033415) do
 
   create_table "expenses", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130602224959) do
     t.datetime "updated_at",   :null => false
     t.integer  "owner_id"
     t.date     "expense_date"
+    t.integer  "split_count"
   end
 
   create_table "splits", :force => true do |t|

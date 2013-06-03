@@ -12,8 +12,15 @@
 #
 
 class Split < ActiveRecord::Base
-  attr_accessible :expense_id, :contributor_id
+  attr_accessible :expense_id, :contributor_id, :amount
   belongs_to :expense
   belongs_to :contributor, class_name: 'User'
   #validates_numericality_of :amount
+
+  before_save :dutchify_expense
+
+  def dutchify_expense
+    self.amount = self.expense.amount / self.expense.split_count
+  end
+
 end

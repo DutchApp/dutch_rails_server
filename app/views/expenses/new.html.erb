@@ -22,6 +22,8 @@
       <span class="add-on">$</span>
       <%= f.number_field :amount, class: 'input-mini' %>
     </div>
+    <%= f.label :go_dutch, 'Go Dutch' %>
+    <%= f.check_box :go_dutch %>
     <%= f.label :contributor_tokens, 'Contributors' %>
     <%= f.text_field :contributor_tokens %>
     <div>

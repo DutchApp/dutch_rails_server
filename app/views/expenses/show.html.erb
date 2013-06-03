@@ -8,7 +8,7 @@
 
 <% if @expense.contributors.any?%>
 <h2>Contributors</h2>
-    <% @expense.contributors.each do |contributor| %>
-        <p><%= contributor.name %></p>
+    <% @expense.splits.each do |split| %>
+        <p><%= split.contributor.name %> owes <%= number_to_currency split.amount %></p>
     <% end %>
 <% end %>

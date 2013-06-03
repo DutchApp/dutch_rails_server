@@ -23,6 +23,7 @@ describe Expense do
 
 	it {should belong_to :owner}
 	it {should respond_to :splits}
+	it {should respond_to :go_dutch?}
 	it {should respond_to :contributors}
 	it {should respond_to :contributor_tokens}
 
