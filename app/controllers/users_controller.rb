@@ -2,15 +2,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.search(params[:search])
-=begin
+    @users = User.search params[:q]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
       format.xml { render xml: @users }
       format.js
     end
-=end
   end
 
   # GET /users/1

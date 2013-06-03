@@ -33,7 +33,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_many :expenses
+  has_many :expenses, foreign_key: :owner_id
+  has_many :splits
 
   def self.search(search)
     if (search && !search.blank?)

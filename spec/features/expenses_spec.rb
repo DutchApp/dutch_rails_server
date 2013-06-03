@@ -6,7 +6,7 @@ feature 'Expense Management' do
     sign_in @user
   end
   scenario 'user creates new expense page' do
-    @expense = FactoryGirl.build :expense, user_id: @user.id
+    @expense = FactoryGirl.build :expense, owner_id: @user.id
     visit '/expenses/new'
 
     fill_in 'Title', with: @expense.name
@@ -18,7 +18,7 @@ feature 'Expense Management' do
   end
 
   scenario 'User views list of expenses' do
-    FactoryGirl.create :expense, user_id: @user.id
+    FactoryGirl.create :expense, owner_id: @user.id
     visit '/expenses/'
 
     @user.expenses.each do |expense|
@@ -27,7 +27,7 @@ feature 'Expense Management' do
   end
 
   scenario 'Expense owner views an expense' do
-    @expense = FactoryGirl.create :expense, user_id: @user.id
+    @expense = FactoryGirl.create :expense, owner_id: @user.id
     visit "/expenses/#{@expense.id}"
 
     expect(page).to have_selector 'h1', text: @expense.name
