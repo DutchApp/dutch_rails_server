@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505031019) do
+ActiveRecord::Schema.define(:version => 20130603033415) do
 
   create_table "expenses", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(:version => 20130505031019) do
     t.string   "description"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "user_id"
+    t.integer  "owner_id"
     t.date     "expense_date"
+    t.integer  "split_count"
   end
 
   create_table "splits", :force => true do |t|
@@ -29,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20130505031019) do
     t.string   "description"
     t.decimal  "amount"
     t.integer  "expense_id"
-    t.integer  "split_owner_id"
+    t.integer  "contributor_id"
   end
 
   create_table "users", :force => true do |t|

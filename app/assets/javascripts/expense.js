@@ -7,7 +7,7 @@
  */
 $(function() {
     $("#search").keyup(function(){
-        $.get($("#contributor_search").attr("action"), $(this).serialize(), null, "script");
+        $.get($("#user_search").attr("action"), $(this).serialize(), null, "script");
         return false;
     });
 });
