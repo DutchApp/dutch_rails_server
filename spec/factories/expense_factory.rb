@@ -8,7 +8,7 @@
 #  description  :string(255)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  user_id      :integer
+#  owner_id     :integer
 #  expense_date :date
 #
 
@@ -19,6 +19,6 @@ FactoryGirl.define do
     description Faker::Lorem.sentence
     #expense_date Date.current
     expense_date '05/11/2013'
-    user_id 1
+    owner_id 1
   end
 end

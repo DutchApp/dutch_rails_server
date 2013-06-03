@@ -5,4 +5,10 @@
 </div>
 <p>Created <%= distance_of_time_in_words_to_now @expense.created_at %> ago</p>
 <p>Amount: <%= number_to_currency @expense.amount %></p>
-<%= render 'contributors' %>
+
+<% if @expense.contributors.any?%>
+<h2>Contributors</h2>
+    <% @expense.contributors.each do |contributor| %>
+        <p><%= contributor.name %></p>
+    <% end %>
+<% end %>
