@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+APP_NAME = 'DutchApp'
 APP_VERSION = '0.0.2'
 
 require 'rails/all'
