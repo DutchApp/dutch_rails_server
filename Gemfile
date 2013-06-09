@@ -52,6 +52,7 @@ gem 'jquery-rails'
 
 # Devise Integration
 gem 'devise'
+gem 'devise_header_token' # To enable auth token in header
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
