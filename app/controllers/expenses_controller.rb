@@ -3,13 +3,22 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
   end
 
+  # POST /expenses
+  # POST /expenses.json
   def create
-    @expense = Expense.new(params['expense'])
-    # TODO: verify date format
-    #@expense.expense_date = Date.strptime(params['expense']['expense_date'], '%m/%d/%Y')
-    @expense.owner = current_user
-    if @expense.save
-      render :show
+    respond_to do |format|
+      @expense = Expense.new(params['expense'])
+      # TODO: verify date format
+      @expense.expense_date = Date.strptime(params['expense']['expense_date'], '%m/%d/%Y')
+      @expense.owner = current_user
+      if @expense.save
+        format.html {render :show}
+        #format.json {render json:{message: t(:expenses_messages_created) }, status: :created}
+        format.json {render json:{message: 'Expense Created' }, status: :created}
+      else
+        format.html {render :new}
+        format.json {render json: @expense.errors, status: :unprocessable_entity}
+      end
     end
   end
 

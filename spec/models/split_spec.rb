@@ -18,5 +18,6 @@ describe Split do
   it {should respond_to :description}
   it {should belong_to :expense}
   it {should belong_to :contributor}
+  it {should have_many(:feeds)}
   #it {should validate_numericality_of :amount}
 end

@@ -23,12 +23,14 @@ describe Expense do
 
 	it {should belong_to :owner}
 	it {should respond_to :splits}
-	it {should respond_to :go_dutch?}
+  it {should respond_to :go_dutch?}
 	it {should respond_to :contributors}
 	it {should respond_to :contributor_tokens}
 
 
 	it {should validate_presence_of :name}
 	it {should validate_numericality_of :amount}
+
+  it {should have_many(:feeds)}
 
 end

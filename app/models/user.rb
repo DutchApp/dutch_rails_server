@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
 
   has_many :expenses, foreign_key: :owner_id
   has_many :splits
+  has_many :feeds
 
   def self.search(search)
     if (search && !search.blank?)
