@@ -12,3 +12,6 @@
         <p><%= split.contributor.name %> owes <%= number_to_currency split.amount %></p>
     <% end %>
 <% end %>
+
+<h2>Recent Activity</h2>
+<%= render @expense.feeds %>

@@ -1,0 +1,8 @@
+<p>
+  <% if feed.user.eql? current_user %>
+      You
+  <% else %>
+      <%= feed.user.name %>
+  <% end %>
+  <%= feed.message %> <span class="mute"><%= distance_of_time_in_words_to_now feed.created_at %> ago</span>
+</p>

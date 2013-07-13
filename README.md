@@ -1,6 +1,19 @@
 [![Code Climate](https://codeclimate.com/github/DutchApp/dutch_rails_server.png)](https://codeclimate.com/github/DutchApp/dutch_rails_server)
 [![Dependency Status](https://gemnasium.com/DutchApp/dutch_rails_server.png)](https://gemnasium.com/DutchApp/dutch_rails_server)
 
+
+===============================================================================
+Heroku setup
+
+Development:
+1. Setup git remote for Heroku: 'heroku git:remote -r staging -a dutchdev'
+2. Push local branch to Heroku: 'git push staging <local_branch>:master'
+
+Production:
+1. Setup git remote for Heroku: 'heroku git:remote -r production -a dutch'
+2. Push local branch to Heroku: 'git push production master'
+
+
 ===============================================================================
 
 Some setup you must do manually if you haven't yet:
