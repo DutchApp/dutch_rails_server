@@ -20,7 +20,10 @@ class Expense < ActiveRecord::Base
   validates_numericality_of :amount
   has_many :splits
   has_many :contributors, through: :splits
+  has_many :feeds
   attr_reader :contributor_tokens
+
+  after_create :add_create_feed
 
   def go_dutch?
     self.go_dutch == '1'
@@ -29,5 +32,12 @@ class Expense < ActiveRecord::Base
   def contributor_tokens=(ids)
     self.contributor_ids = ids.split(',')
     self.split_count = self.contributor_ids.size
+  end
+
+  def add_create_feed
+    feed = Feed.create(message: "created a new expense")
+    feed.user = self.owner
+    feed.save!
+    self.feeds << feed
   end
 end

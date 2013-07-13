@@ -25,7 +25,7 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'cucumber-rails', :require => false
+  gem 'capybara'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end

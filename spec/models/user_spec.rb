@@ -32,6 +32,7 @@ describe User, user: true do
   it {should respond_to :password}
   it {should respond_to :password_confirmation}
   it {should respond_to :expenses}
+  it {should have_many(:feeds)}
 
 
   it {should be_valid}

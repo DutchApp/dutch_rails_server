@@ -9,7 +9,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       @expense = Expense.new(params['expense'])
       # TODO: verify date format
-      #@expense.expense_date = Date.strptime(params['expense']['expense_date'], '%m/%d/%Y')
+      @expense.expense_date = Date.strptime(params['expense']['expense_date'], '%m/%d/%Y')
       @expense.owner = current_user
       if @expense.save
         format.html {render :show}
