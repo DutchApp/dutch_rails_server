@@ -11,10 +11,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  # GET /users
+  # GET /users.json
   def show
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,32 +22,6 @@ class UsersController < ApplicationController
       format.xml { render xml: @user }
     end
   end
-
-  # POST /users/sign_in
-=begin
-  def login
-    user = User.find_by_email(params[:email])
-
-    respond_to do |format|
-      if user && user.authenticate(params[:password])
-        format.json do
-          render json: {
-              message: 'User does not exist',
-              status: :unauthorized
-          }.to_json
-        end
-      end
-
-
-      else
-        format.html {redirect_to @user, notice: "Welcome, #{@user.name}!" }
-        format.json {render json: user}
-        format.xml { render xml: @user }
-      end
-    end
-
-  end
-=end
 
   # GET /users/new
   # GET /users/new.json

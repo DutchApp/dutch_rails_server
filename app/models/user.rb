@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :expenses, foreign_key: :owner_id
-  has_many :splits
+  has_many :splits, foreign_key: :contributor_id
   has_many :feeds
 
   def self.search(search)
@@ -44,5 +44,19 @@ class User < ActiveRecord::Base
       []
     end
   end
+
+  def as_json(options=nil)
+    #super(only: [:name, :email, :id)
+    { :name => self.name, :user_id => self.id, :credit => self.credit, debt: self.debt }
+  end
+
+  def credit
+    self.expenses.map {|expense| expense['amount']}.reduce(0, :+)
+  end
+
+  def debt
+    self.splits.map {|split| split['amount']}.reduce(0, :+)
+  end
+
 
 end
