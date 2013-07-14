@@ -1,3 +1,5 @@
 <h1>Home#index</h1>
 <%= link_to 'Expenses', expenses_path, class: 'btn btn-large btn-primary' %>
+<h2>Credit: <%= current_user.credit %></h2>
+<h2>Debt: <%= current_user.debt %></h2>
 <h2><%= t 'home.recent_activity' %></h2>
