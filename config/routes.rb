@@ -3,9 +3,11 @@ DutchRails::Application.routes.draw do
 
   get "home/index"
 
+  ############# User routes #################################################
   devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
-
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
+  match 'getUserDetails' => 'users#show'
+  ############# User routes #################################################
 
   root :to => "home#index"
 
