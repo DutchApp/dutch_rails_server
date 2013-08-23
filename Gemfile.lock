@@ -82,7 +82,7 @@ GEM
     multi_json (1.7.2)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
-    pg (0.12.2)
+    pg (0.16.0)
     polyglot (0.3.3)
     populator (1.0.0)
     rack (1.4.5)
@@ -128,7 +128,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    shoulda-matchers (2.0.0)
+    shoulda-matchers (2.3.0)
       activesupport (>= 3.0.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -168,12 +168,12 @@ DEPENDENCIES
   factory_girl_rails (= 4.2.1)
   faker (= 1.1.2)
   jquery-rails
-  pg (= 0.12.2)
+  pg (= 0.16.0)
   populator
   rails (= 3.2.13)
   rspec-rails
   sass-rails (= 3.2.5)
-  shoulda-matchers
+  shoulda-matchers (= 2.3.0)
   simplecov
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
