@@ -9,6 +9,7 @@
 #  amount         :decimal(, )
 #  expense_id     :integer
 #  contributor_id :integer
+#  status         :string(255)
 #
 
 class Split < ActiveRecord::Base
@@ -33,5 +34,33 @@ class Split < ActiveRecord::Base
     self.expense.feeds << feed
     #self.expense.feeds << Feed.create!(message: "added #{self.contributor.name} to the expense '#{self.expense.name}'")
   end
+  
+  def make_pending
+    self.status = PENDING
+  end
+  
+  def pending?
+    self.status == PENDING
+  end
+  
+  def accept
+    self.status = ACCEPTED
+  end
+  
+  def accepted?
+    self.status == ACCEPTED
+  end
+  
+  def reject
+    self.status = REJECTED
+  end
+  
+  def rejected?
+    self.status == REJECTED
+  end
+  
+  PENDING = 'Pending'
+  ACCEPTED = 'Accepted'
+  REJECTED = 'Rejected'
 
 end

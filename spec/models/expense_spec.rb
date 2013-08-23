@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #  owner_id     :integer
 #  expense_date :date
+#  split_count  :integer
 #
 
 require 'spec_helper'

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: feeds
+#
+#  id         :integer          not null, primary key
+#  message    :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  expense_id :integer
+#  user_id    :integer
+#
+
 class Feed < ActiveRecord::Base
   include ActionView::Helpers::DateHelper
   attr_accessible :message
