@@ -23,7 +23,7 @@ group :test, :development do
 end
 
 group :test do
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '2.3.0'
   gem 'simplecov', require: false
   gem 'capybara'
   # database_cleaner is not required, but highly recommended
@@ -32,7 +32,7 @@ end
 
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg', '0.16.0'
 end
 
 
