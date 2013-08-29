@@ -1,20 +1,19 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Dutch", root_path, id: "logo" %>
-
       <nav>
-      <% if user_signed_in? %>
-        <div class="btn-group pull-right">
-          <a class="btn btn-inverse dropdown-toggle" data-toggle='dropdown' href="#">
-            <%= current_user.name %>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-link' %></li>
-          </ul>
-        </div>
-      <% end %>
+        <%= link_to "Dutch", root_path, id: "logo" %>
+          <% if user_signed_in? %>
+            <div class="nav nav-pills nav-top pull-right">
+              <a class="dropdown-toggle dropdown-user" data-toggle='dropdown' href="#">
+                <i class="icon-user icon-white"></i> <%= current_user.name %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-link' %></li>
+              </ul>
+            </div>
+          <% end %>
       </nav>
     </div>
   </div>
