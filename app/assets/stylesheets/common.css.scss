@@ -26,6 +26,19 @@ body {
   margin-left: 15px;
 }
 
+.dropdown-user {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.nav-top {
+  padding-top: 10px;
+}
+
+.dropdown-user:hover {
+  color: #fff;
+  text-decoration: none;
+
 .credit-debt-chart {
   width: 900px;
   height: 500px;
