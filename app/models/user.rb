@@ -45,10 +45,12 @@ class User < ActiveRecord::Base
     end
   end
 
+=begin
   def as_json(options=nil)
     #super(only: [:name, :email, :id)
     { :name => self.name, :user_id => self.id, :credit => self.credit, debt: self.debt }
   end
+=end
 
   def credit
     self.expenses.map {|expense| expense['amount']}.reduce(0, :+)
