@@ -1,12 +1,22 @@
-<script type="text/javascript">
-$(function() {
-    google.setOnLoadCallback(drawChart(<%= current_user.credit%>, <%= current_user.debt%>));
-});
-</script>
-<div class="container">
-  <div class="credit-debt-chart" id="chart_div"></div>
-  <%= link_to 'Expenses', expenses_path, class: 'btn btn-large btn-primary' %>
-  <h2><%= t 'home.recent_activity' %></h2>
+<div class="row">
+  <div class="span12">
+    <div class="welcome_banner hero-unit">
+      <h1>Welcome to Dutch!</h1>
+      <p>Sharing expenses with friends can be fun!</p>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <div class="well">
+          <%= render 'signin' %>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="well">
+          <%= render 'signup' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

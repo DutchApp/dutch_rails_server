@@ -3,11 +3,9 @@ require 'spec_helper'
 feature 'Home Page' do
   before do
     @user = FactoryGirl.create :user
-    sign_in @user
   end
-  scenario 'Activities' do
-    @expense = FactoryGirl.build :expense, owner_id: @user.id
+  scenario 'Visitor' do
     visit '/'
-    page.should have_selector 'h2', text: 'Recent Activity'
+    page.should have_content 'Home'
   end
 end
