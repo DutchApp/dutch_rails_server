@@ -1,11 +1,20 @@
 require 'spec_helper'
 
-feature 'Home Page' do
+feature 'Welcome Page' do
   before do
-    @user = FactoryGirl.create :user
-  end
-  scenario 'Visitor' do
+    #@user = FactoryGirl.create :user
     visit '/'
-    page.should have_content 'Home'
   end
+  subject {page}
+
+  # header
+  it {should have_link 'DUTCH'}
+
+  # Banner
+  it {should have_title 'Home'}
+  it {should have_selector 'h1', text: 'Welcome to Dutch!'}
+  it {should have_selector 'p', text: 'Sharing expenses with friends can be fun!'}
+
+
+
 end

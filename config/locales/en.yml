@@ -2,8 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  brand: 'DUTCH'
   home:
-    recent_activity: 'Recent Activity'
+    index:
+      title: 'Home'
+      page_greeting: 'Welcome to Dutch!'
+      page_caption: 'Sharing expenses with friends can be fun!'
+      recent_activity: 'Recent Activity'
   sessions:
     signout_failed_noauth: 'Sign out failed. Auth Token not provided with request'
   expenses:
