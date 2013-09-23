@@ -21,4 +21,9 @@ class ApplicationController < ActionController::Base
   		request.format = :mobile if mobile_device?
   	end
 =end
+
+  def after_sign_in_path_for(resource)
+    expenses_path
+  end
+
 end

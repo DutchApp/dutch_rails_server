@@ -1,6 +1,3 @@
-@import "bootstrap";
-@import "bootstrap-responsive";
-
 /* header */
 #logo {
   float: left;
@@ -17,7 +14,8 @@
 }
 
 body {
-  margin-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .search-dropdown {
