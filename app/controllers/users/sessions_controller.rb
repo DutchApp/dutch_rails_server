@@ -17,6 +17,7 @@ class Users::SessionsController < Devise::SessionsController
     respond_to do |format|
       format.html {super}
       format.json do
+        logger.debug 'Sign in request received from mobile'
         build_resource
         user = User.find_for_database_authentication(:email => params[:email])
         return invalid_login_attempt unless user
@@ -34,14 +35,22 @@ class Users::SessionsController < Devise::SessionsController
     respond_to do |format|
       format.html {super}
       format.json do
-        user = User.find_by_authentication_token(request.headers['X-API-TOKEN'])
-        if user.nil?
-          render json:{message: 'Sign out failed.'}, status: :unprocessable_entity
+        auth_token = request.headers['X-API-TOKEN']
+        #logger.debug "Auth Token: [#{mask auth_token}]"
+        if auth_token.nil?
+          render json:{message: 'No Auth Token found.'}, status: :precondition_failed
+          return
         else
-          signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
-          user.reset_authentication_token!
-          render json:{message: 'Sign out successful.'}, status: :accepted
+          user = User.find_by_authentication_token(request.headers['X-API-TOKEN'])
+          if user.nil?
+            render json:{message: 'No user found for requested auth token'}, status: :precondition_failed
+          else
+            signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
+            user.reset_authentication_token!
+            render json:{message: 'Sign out successful.'}, status: :accepted
+          end
         end
+
       end
     end
   end

@@ -12,9 +12,9 @@ DutchRails::Application.routes.draw do
 =end
   devise_for :users, skip: [:sessions]
   as :user do
-    get 'sign_in' => "home#index", as: :new_user_session
-    post 'sign_in' => "users/sessions#create", as: :user_session
-    delete 'sign_out' => "users/sessions#destroy", as: :destroy_user_session
+    get 'users/sign_in' => "home#index", as: :new_user_session
+    post 'users/sign_in' => "users/sessions#create", as: :user_session
+    delete 'users/sign_out' => "users/sessions#destroy", as: :destroy_user_session
   end
   resources :users, only: [:index, :show]
   match 'getUserDetails' => 'users#show'

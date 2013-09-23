@@ -4,6 +4,8 @@
 en:
   home:
     recent_activity: 'Recent Activity'
+  sessions:
+    signout_failed_noauth: 'Sign out failed. Auth Token not provided with request'
   expenses:
     messages:
       created: 'Expense Created'
