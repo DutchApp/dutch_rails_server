@@ -25,7 +25,7 @@ class Users::SessionsController < Devise::SessionsController
     respond_to do |format|
       format.html {super}
       format.json do
-        user = User.find_by_authentication_token(request.headers['auth_token'])
+        user = User.find_by_authentication_token(request.headers['X-API-TOKEN'])
         if user.nil?
           render json:{message: 'Sign out failed.'}, status: :unprocessable_entity
         else
