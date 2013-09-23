@@ -25,6 +25,8 @@ class Users::SessionsController < Devise::SessionsController
           user.ensure_authentication_token!
           render :json => { :auth_token => user.authentication_token, :user_id => user.id }, :status => :created
           return
+        else
+          return invalid_login_attempt
         end
       end
     end
