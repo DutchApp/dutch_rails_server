@@ -3,6 +3,15 @@ class Users::SessionsController < Devise::SessionsController
   prepend_before_filter :allow_params_authentication!, :only => :create
   prepend_before_filter { request.env["devise.skip_timeout"] = true }
 
+  # GET /sign_in
+  def new
+    self.resource = build_resource(nil, :unsafe => true)
+    clean_up_passwords(resource)
+    #respond_with(resource, location: new_user_session_path)
+    redirect_to root_path
+  end
+
+
   # POST /users/sign_in
   def create
     respond_to do |format|

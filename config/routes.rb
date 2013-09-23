@@ -4,7 +4,18 @@ DutchRails::Application.routes.draw do
   get "home/index"
 
   ############# User routes #################################################
-  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
+=begin
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'} do
+    get 'users/sign_in' => "home#index", as: :new_user_session
+    get 'users/sign_up' => "home#index", as: :new_user_registration
+  end
+=end
+  devise_for :users, skip: [:sessions]
+  as :user do
+    get 'sign_in' => "home#index", as: :new_user_session
+    post 'sign_in' => "users/sessions#create", as: :user_session
+    delete 'sing_out' => "users/sessions#destroy", as: :destroy_user_session
+  end
   resources :users, only: [:index, :show]
   match 'getUserDetails' => 'users#show'
   ############# User routes #################################################
