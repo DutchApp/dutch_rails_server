@@ -9,6 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
           sign_up(resource_name, resource)
           render json: resource, status: :created
         else
+          logger.debug resource.errors
           render json: resource.errors, status: :unprocessable_entity
         end
       end

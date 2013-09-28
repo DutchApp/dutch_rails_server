@@ -2,12 +2,12 @@ Registration:
 POST /users
 {"user":{
     "name":["Abhinav Trivedi"],
-    "email":"abhi2@dutch.com",
+    "email":"abhi@dutch.com",
     "password":"password",
     "password_confirmation":"password"
     }
 }
-curl -H "Content-type: application/json" -X POST -d '{"user":{"name":"Abhinav Trivedi","email":"abhi2@dutch.com","password":"password","password_confirmation":"password"}}' 'http://dutch.herokuapp.com/users.json'
+curl -H "Content-type: application/json" -X POST -d '{"user":{"name":"Abhinav Trivedi","email":"abhi2@dutch.com","password":"password","password_confirmation":"password"}}' 'http://dutchdev.herokuapp.com/users.json'
 
 Sign_in:
 POST /users
