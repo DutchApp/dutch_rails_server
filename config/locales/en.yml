@@ -6,6 +6,9 @@ en:
   home:
     index:
       title: 'Home'
+      label:
+        register: 'Register'
+        login: 'Sign In'
       page_greeting: 'Welcome to Dutch!'
       page_caption: 'Sharing expenses with friends can be fun!'
       recent_activity: 'Recent Activity'
