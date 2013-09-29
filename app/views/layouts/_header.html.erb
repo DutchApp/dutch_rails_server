@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><%= t "brand" %></a>
+      <%= link_to t("brand"), root_path, class: 'navbar-brand' %>
     </div>
     <% if user_signed_in? %>
     <div class="collapse navbar-collapse dutch-navbar-header">
@@ -23,6 +23,10 @@
         </li>
       </ul>
     </div>
+    <% else %>
+        <span class='pull-right'>
+            <%= render 'layouts/signin-inline' %>
+        </span>
     <% end %>
   </div>
 
